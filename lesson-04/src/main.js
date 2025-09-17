@@ -50,13 +50,13 @@ for (let j = 0; j < 3; j++) {
 /*
 const num = 10;
 
-if (num < 5) { // Intentional bug: should be num > 5
+if (num < 5) {
   console.log('num is greater than 5');
 } else {
   console.log('num is 5 or less');
 }
 
-for (let k = 0; k < 3; k = k - 1) { // Intentional bug: k should increment
+for (let k = 0; k < 3; k = k - 1) {
   console.log(k);
 }
 */
