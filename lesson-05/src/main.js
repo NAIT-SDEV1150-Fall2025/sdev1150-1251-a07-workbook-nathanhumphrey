@@ -8,6 +8,13 @@ const dynamicBox = document.querySelector('#dynamic-box');
 console.log(titleEl, taglineEl, dynamicBox);
 
 // 2. textContent vs innerHTML
+titleEl.textContent = 'DOM: JavaScript Window into Page Structure';
+
+// Use backticks for multi-line strings
+dynamicBox.innerHTML = `
+  <p class="desc">
+    This block was injected with <em>innerHTML</em>. It can include <strong>markup</strong>.
+  </p>`;
 
 // 3. Attributes & styles
 
