@@ -5,8 +5,9 @@ const titleEl = document.querySelector('#page-title');
 const taglineEl = document.querySelector('.tagline');
 const dynamicBox = document.querySelector('#dynamic-box');
 const heroImg = document.querySelector('#hero-img');
+const footerNote = document.querySelector('#footer-note');
 
-console.log(titleEl, taglineEl, dynamicBox);
+console.log(titleEl, taglineEl, dynamicBox, heroImg, footerNote);
 
 // 2. textContent vs innerHTML
 titleEl.textContent = 'DOM: JavaScript Window into Page Structure';
@@ -28,7 +29,9 @@ console.log(heroImg.getAttribute('src'));
 // 5. Use helpers to perform simple tasks
 
 // 6. Footer text tweak (demonstrate class toggle & style change)
+footerNote.classList.add('footer-strong');
 
 // Require innerHTML here to render the &copy; entity correctly
+footerNote.innerHTML = '&copy; 2025 SDEV1150';
 
 // 7. Null-safety tip: check selections before using them
