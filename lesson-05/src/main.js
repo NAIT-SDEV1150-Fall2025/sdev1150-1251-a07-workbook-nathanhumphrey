@@ -4,6 +4,7 @@ console.log('Lesson 05 starter loaded');
 const titleEl = document.querySelector('#page-title');
 const taglineEl = document.querySelector('.tagline');
 const dynamicBox = document.querySelector('#dynamic-box');
+const heroImg = document.querySelector('#hero-img');
 
 console.log(titleEl, taglineEl, dynamicBox);
 
@@ -17,6 +18,10 @@ dynamicBox.innerHTML = `
   </p>`;
 
 // 3. Attributes & styles
+heroImg.setAttribute('alt', 'A replaceable sample image');
+heroImg.style.borderColor = 'red';
+
+console.log(heroImg.getAttribute('src'));
 
 // 4. Create small helper functions for reuse
 
