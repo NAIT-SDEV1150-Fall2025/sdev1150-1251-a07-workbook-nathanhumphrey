@@ -25,8 +25,54 @@ heroImg.style.borderColor = 'red';
 console.log(heroImg.getAttribute('src'));
 
 // 4. Create small helper functions for reuse
+function updateText(selector, text) {
+  const el = document.querySelector(selector);
+  if (!el) {
+    return console.warn('No element found for', selector);
+  }
+
+  el.textContent = text;
+}
+
+function updateHTML(selector, html) {
+  const el = document.querySelector(selector);
+  if (!el) {
+    return console.warn('No element found for', selector);
+  }
+
+  el.innerHTML = html;
+}
+
+function setAttr(selector, name, value) {
+  const el = document.querySelector(selector);
+  if (!el) {
+    return console.warn('No element found for', selector);
+  }
+
+  el.setAttribute(name, value);
+}
+
+function setStyle(selector, styleObj = {}) {
+  const el = document.querySelector(selector);
+  if (!el) {
+    return console.warn('No element found for', selector);
+  }
+
+  Object.entries(styleObj).forEach(([k, v]) => {
+    el.style[k] = v;
+  });
+}
 
 // 5. Use helpers to perform simple tasks
+updateText('.tagline', 'Selecting, reading, and modifying nodes with JavaScript.');
+updateHTML('#dynamic-box', `
+  <p class="desc">
+    Replaced again via <code>updateHTML()</code>. Notice how we can inject different markup here.
+  </p>
+`);
+
+setAttr('#hero-img', 'title', 'Hover title set from JS');
+setStyle('#hero-img', { borderColor: 'navy' });
 
 // 6. Footer text tweak (demonstrate class toggle & style change)
 footerNote.classList.add('footer-strong');
@@ -35,3 +81,7 @@ footerNote.classList.add('footer-strong');
 footerNote.innerHTML = '&copy; 2025 SDEV1150';
 
 // 7. Null-safety tip: check selections before using them
+const missing = document.querySelector('#does-not-exist');
+if (missing === null) {
+  console.warn('Selector #does-not-exist did not match any element.');
+}
