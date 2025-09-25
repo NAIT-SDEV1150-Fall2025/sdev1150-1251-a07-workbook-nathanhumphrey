@@ -71,7 +71,11 @@ heroImg.style.borderColor = '#0d6efd'; // inline style to illustrate visual chan
 // Create small helper functions for reuse
 function updateText(selector, text) {
   const el = document.querySelector(selector);
-  if (!el) return console.warn('No element found for', selector);
+  
+  if (!el) {
+    return console.warn('No element found for', selector);
+  }
+
   el.textContent = text;
 }
 
@@ -83,13 +87,23 @@ function updateHTML(selector, html) {
 
 function setAttr(selector, name, value) {
   const el = document.querySelector(selector);
-  if (!el) return console.warn('No element found for', selector);
+  
+  if (!el) {
+    return console.warn('No element found for', selector);
+  }
+  
   el.setAttribute(name, value);
 }
 
+// OPTIONAL, for advanced students, the following should prove challenging
+// to understand.
 function setStyle(selector, styleObj = {}) {
   const el = document.querySelector(selector);
-  if (!el) return console.warn('No element found for', selector);
+  
+  if (!el) {
+    return console.warn('No element found for', selector);
+  }
+
   Object.entries(styleObj).forEach(([k, v]) => {
     el.style[k] = v;
   });
