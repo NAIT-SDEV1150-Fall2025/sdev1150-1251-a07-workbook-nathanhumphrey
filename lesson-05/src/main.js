@@ -52,6 +52,8 @@ function setAttr(selector, name, value) {
   el.setAttribute(name, value);
 }
 
+// OPTIONAL, for advanced students, the following should prove challenging
+// to understand.
 function setStyle(selector, styleObj = {}) {
   const el = document.querySelector(selector);
   if (!el) {
