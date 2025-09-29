@@ -25,10 +25,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
   // 4. click: change message textContent (no HTML parsing)
-
+  btnMessage.addEventListener('click', () => {
+    const today = new Date();
+    message.textContent = `Message updated at ${today.toLocaleString()}`;
+  });
   // 5. mouseover / mouseout: display hover status on the card
+  hoverCard.addEventListener('mouseover', () => {
+    hoverStatus.textContent = 'Status: Hovering';
+  });
+
+  hoverCard.addEventListener('mouseout', () => {
+    hoverStatus.textContent = 'Status: Not Hovering';
+  });
 
   // 6. keydown: show last key pressed (global listener)
+  document.addEventListener('keydown', function (e) {
+    keyOutput.textContent = `Last key: ${e.key} (code: ${e.code})`;
+  });
 
   // 7. Event delegation: one listener on the <ul> for all <li> elements
+  list.addEventListener('click', (e) => {
+    const target = e.target; // get the target element
+    if (target.tagName === 'LI') {
+      selection.textContent = `Selected: ${target.getAttribute('data-id')}`;
+    }
+  });
 });
