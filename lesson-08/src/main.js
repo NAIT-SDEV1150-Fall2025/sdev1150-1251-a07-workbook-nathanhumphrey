@@ -46,7 +46,24 @@ document.addEventListener('DOMContentLoaded', function () {
   // 7. Event delegation: one listener on the <ul> for all <li> elements
   list.addEventListener('click', (e) => {
     const target = e.target; // get the target element
+
+    // Only proceed if an <li> was clicked
+    // Or use closest() to allow clicks on child elements:
+    // const li = e.target.closest('li');
     if (target.tagName === 'LI') {
+      // remove previous selection
+      const prevActive = list.querySelector('li.active');
+
+      if (prevActive) {
+        prevActive.classList.remove('active');
+      }
+
+      // Or just iterate over all li elements, find the one active, and remove the class:
+      // list.querySelectorAll('li.active').forEach(el => el.classList.remove('active'));
+
+      // activate clicked
+      target.classList.add('active');
+
       selection.textContent = `Selected: ${target.getAttribute('data-id')}`;
     }
   });
