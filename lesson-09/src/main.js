@@ -49,6 +49,9 @@ thumbnails.addEventListener('click', (e) => {
 });
 
 // 2.2 Close button - using an arrow function
+closeBtn.addEventListener('click', () => {
+  viewer.classList.remove('show');
+});
 
 // Student TODO: Add event listener to document, which closes
 // the viewer when the Escape key is pressed
