@@ -71,7 +71,7 @@ heroImg.style.borderColor = '#0d6efd'; // inline style to illustrate visual chan
 // Create small helper functions for reuse
 function updateText(selector, text) {
   const el = document.querySelector(selector);
-  
+
   if (!el) {
     return console.warn('No element found for', selector);
   }
@@ -87,11 +87,11 @@ function updateHTML(selector, html) {
 
 function setAttr(selector, name, value) {
   const el = document.querySelector(selector);
-  
+
   if (!el) {
     return console.warn('No element found for', selector);
   }
-  
+
   el.setAttribute(name, value);
 }
 
@@ -99,7 +99,7 @@ function setAttr(selector, name, value) {
 // to understand.
 function setStyle(selector, styleObj = {}) {
   const el = document.querySelector(selector);
-  
+
   if (!el) {
     return console.warn('No element found for', selector);
   }
