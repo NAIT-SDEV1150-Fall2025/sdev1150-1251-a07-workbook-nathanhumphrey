@@ -15,7 +15,7 @@ function outerClick() {
   log.textContent += 'Outer clicked (capture) | ';
 }
 
-outer.addEventListener('click', outerClick);
+outer.addEventListener('click', outerClick, true);
 
 // 2.2 Inner div - using an anonymous function
 inner.addEventListener('click', function () {
@@ -23,17 +23,30 @@ inner.addEventListener('click', function () {
 });
 
 // 2.3 Button - using an arrow function
-button.addEventListener('click', () => {
+button.addEventListener('click', (e) => {
   log.textContent += 'Button clicked | ';
+
+  // Stop propagation
+  e.stopPropagation();
 });
 
 // ============== Gallery demo
 
 // 1. Select required elements
+const thumbnails = document.querySelector('.thumbnails');
+const mainImage = document.querySelector('#main-image');
+const viewer = document.querySelector('.viewer');
+const closeBtn = document.querySelector('#close-viewer');
 
 // 2. Add event listeners
 
 // 2.1 Thumbnails container - using an arrow function
+thumbnails.addEventListener('click', (e) => {
+  if (e.target.tagName === 'IMG') {
+    mainImage.src = e.target.src;
+    viewer.classList.add('show');
+  }
+});
 
 // 2.2 Close button - using an arrow function
 
