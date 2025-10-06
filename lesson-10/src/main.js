@@ -10,6 +10,8 @@ function serializeForm(formEl) {
   const fullNameValue = formEl.elements.fullName.value;
   // TODO: get the email and bio
 
+  // OPTIONAL: get the plan and topic values as well
+
   // Add the remaining fields here
   return {
     fullName: fullNameValue,
@@ -34,3 +36,6 @@ form.addEventListener('submit', (e) => {
 });
 
 // 4. Handle form reset - reset the result area text when the form is reset
+form.addEventListener('reset', () => {
+  result.textContent = 'Awaiting submission...';
+});
