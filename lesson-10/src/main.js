@@ -9,12 +9,25 @@ function serializeForm(formEl) {
   // get the name, email, and bio
   const fullNameValue = formEl.elements.fullName.value;
   // TODO: get the email and bio
+  const emailValue = formEl.elements.email.value;
+  const bioValue = formEl.elements.bio.value;
 
   // OPTIONAL: get the plan and topic values as well
+  const planValue = formEl.elements.plan.value;
+  let topicValue = '';
+  formEl.elements.topics.forEach((el) => {
+    if (el.checked) {
+      topicValue += `${el.value} `;
+    }
+  });
 
   // Add the remaining fields here
   return {
     fullName: fullNameValue,
+    email: emailValue,
+    bio: bioValue,
+    plan: planValue,
+    topics: topicValue,
   };
 }
 
@@ -32,6 +45,10 @@ form.addEventListener('submit', (e) => {
   result.textContent = `
     Submission received:
     - Name: ${data.fullName}
+    - Email: ${data.email}
+    - Bio: ${data.bio}
+    - Plan: ${data.plan}
+    - Topics: ${data.topics}
   `;
 });
 
