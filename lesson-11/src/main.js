@@ -69,6 +69,7 @@ form.addEventListener('input', (e) => {
     }
   }
 
+  // STUDENT TODO: complete the following
   // 1.2 custom validation for bio (minimum length)
 
   // 1.3 custom validation for email (basic '@' symbol check)
