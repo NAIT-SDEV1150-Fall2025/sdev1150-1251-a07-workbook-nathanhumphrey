@@ -7,6 +7,14 @@ template.innerHTML = `
     background-color: #1875ff;
     color: #ffffff;
     padding:  0.5rem;
+    cursor: pointer;
+  }
+  button:active {
+    border-radius: 0.25rem;
+    border-color: #06295c;
+    background-color: #0054d2ff;
+    color: #ffffff;
+    padding:  0.5rem;
   }
 </style>
 <button>
