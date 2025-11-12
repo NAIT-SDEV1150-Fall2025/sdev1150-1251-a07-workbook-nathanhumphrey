@@ -13,7 +13,7 @@
 <body>
   <main>
     <primary-button>
-      Some Text
+      <span slot="text">Some Text</span>
     </primary-button>
     <primary-button>
       Some more Text
@@ -21,7 +21,7 @@
     <!-- Template here -->
     <!-- Create user-cards here -->
   </main>
-  <template id="primary-button-template">
+  <!-- <template id="primary-button-template">
     <style>
       button {
         border-radius: 0.25rem;
@@ -32,9 +32,9 @@
       }
     </style>
     <button>
-      Button Text
+      <slot name="text">Button Text</slot>
     </button>
-  </template>
+  </template> -->
 </body>
 
 </html>
