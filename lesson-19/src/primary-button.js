@@ -18,7 +18,7 @@ template.innerHTML = `
   }
 </style>
 <button>
-  <slot name="text">Button Text</slot>
+  <slot>Button Text</slot>
 </button>`;
 
 // PrimaryButton Demo
