@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="css/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 19 - Web Components</title>
+  <script type="module" src="/src/main.js"></script>
+</head>
+
+<body>
+  <main>
+    <primary-button>
+      Some Text
+    </primary-button>
+    <primary-button>
+      Some more Text
+    </primary-button>
+    <!-- Template here -->
+    <!-- Create user-cards here -->
+  </main>
+  <template id="primary-button-template">
+    <style>
+      button {
+        border-radius: 0.25rem;
+        border-color: #06295c;
+        background-color: #1875ff;
+        color: #ffffff;
+        padding:  0.5rem;
+      }
+    </style>
+    <button>
+      Button Text
+    </button>
+  </template>
+</body>
+
+</html>
