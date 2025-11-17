@@ -1,0 +1,18 @@
+:root {
+  --global-card-background-color: red;
+  --global-card-border-color: #323232;
+  --global-card-color: #323232;
+  --global-card-active-background-color: #a10000;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px;
+  align-items: flex-start;
+}
