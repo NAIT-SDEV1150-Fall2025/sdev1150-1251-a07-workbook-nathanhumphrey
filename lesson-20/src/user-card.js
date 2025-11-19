@@ -50,7 +50,6 @@ template.innerHTML = `
     </div>
   </div>
 `;
-document.body.appendChild(template);
 
 class UserCard extends HTMLElement {
   constructor() {
