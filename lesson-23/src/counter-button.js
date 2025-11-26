@@ -9,15 +9,24 @@ class CounterButton extends HTMLElement {
 
     this.#count = 0;
 
+    this._handleClick = this._handleClick.bind(this);
+
     const shadow = this.attachShadow({ mode: 'open' });
     const content = template.content.cloneNode(true);
-
     this._btn = content.querySelector('button');
-    this._btn.addEventListener('click', this.#handleClick);
+
     shadow.appendChild(content);
   }
 
-  #handleClick() {
+  connectedCallback() {
+    this._btn.addEventListener('click', this._handleClick);
+  }
+
+  disconnectedCallback() {
+    this._btn.addEventListener('click', this._handleClick);
+  }
+
+  _handleClick() {
     this.#count += 1;
     this._btn.textContent = `Clicked ${this.#count}`;
   }
