@@ -2,6 +2,9 @@
 import './user-card.js';
 import './counter-button.js';
 
+const cb = document.createElement('counter-button');
+document.body.appendChild(cb);
+
 // Theme toggle button logic
 let dark = false;
 const toggleBtn = document.querySelector('#btn-theme');
