@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="css/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 19 - Web Components</title>
+  <script type="module" src="/src/main.js"></script>
+</head>
+
+<body>
+  <main>
+    <primary-button>
+      Primary Button One
+    </primary-button>
+    <primary-button>
+      Primary Button Two
+    </primary-button>
+    <!-- Create user-cards here -->
+    <user-card avatar="assets/zelda-avatar.png">
+      <span slot="name">Zelda</span>
+      <span slot="description">Princess of Hyrule</span>
+    </user-card>
+
+    <user-card avatar="assets/link-avatar.png">
+      <span slot="name">Link</span>
+      <span slot="description">Hero of Hyrule</span>
+    </user-card>
+  </main>
+  <!-- <template id="primary-button-template">
+    <style>
+      button {
+        border-radius: 0.25rem;
+        border-color: #06295c;
+        background-color: #1875ff;
+        color: #ffffff;
+        padding:  0.5rem;
+      }
+    </style>
+    <button>
+      <slot name="text">Button Text</slot>
+    </button>
+  </template> -->
+</body>
+
+</html>
